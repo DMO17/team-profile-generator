@@ -34,7 +34,6 @@ const typeOfEmployeeQuestion = [
     choices: [
       { name: "Engineer", value: "engineer" },
       { name: "Intern", value: "intern" },
-      { name: "None", value: "none" },
     ],
   },
 ];
@@ -85,9 +84,18 @@ const internQuestions = [
   },
 ];
 
+const addAnotherEmployeeType = [
+  {
+    type: "confirm",
+    name: "addAnother",
+    message: "Do you want to add another employee to the team ?",
+  },
+];
+
 module.exports = {
   starterQuestions,
   typeOfEmployeeQuestion,
   engineerQuestions,
   internQuestions,
+  addAnotherEmployeeType,
 };
