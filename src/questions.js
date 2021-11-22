@@ -29,11 +29,11 @@ const starterQuestions = [
 const typeOfEmployeeQuestion = [
   {
     type: "list",
-    name: "managerOfficeNum",
-    message: "Enter your Managers Office Number",
+    name: "employeeType",
+    message: "Select the type of employee you want to add",
     choices: [
       { name: "Engineer", value: "engineer" },
-      { name: "Intern", value: "inter" },
+      { name: "Intern", value: "intern" },
       { name: "None", value: "none" },
     ],
   },
