@@ -41,22 +41,22 @@ const typeOfEmployeeQuestion = [
 const engineerQuestions = [
   {
     type: "input",
-    name: "engineerName",
+    name: "name",
     message: "Enter the Engineers Name",
   },
   {
     type: "input",
-    name: "engineerEmployeeID",
+    name: "id",
     message: "Enter the Engineers Employee ID",
   },
   {
     type: "input",
-    name: "engineerEmail",
+    name: "email",
     message: "Enter the Engineers Email Address",
   },
   {
     type: "input",
-    name: "engineerGithub",
+    name: "github",
     message: "Enter Engineers Github Username",
   },
 ];
@@ -64,22 +64,22 @@ const engineerQuestions = [
 const internQuestions = [
   {
     type: "input",
-    name: "internName",
+    name: "name",
     message: "Enter the Interns Name",
   },
   {
     type: "input",
-    name: "internsEmployeeID",
+    name: "id",
     message: "Enter the Interns Employee ID",
   },
   {
     type: "input",
-    name: "internEmail",
+    name: "email",
     message: "Enter the Interns Email Address",
   },
   {
     type: "input",
-    name: "internSchool",
+    name: "school",
     message: "Enter Intern school name",
   },
 ];
