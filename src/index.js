@@ -7,6 +7,7 @@ const {
   engineerQuestions,
   addAnotherEmployeeType,
 } = require("./questions");
+const { formatEmployeeArray } = require("./util");
 
 const init = async () => {
   const starterAnswer = await inquirer.prompt(starterQuestions);
@@ -38,7 +39,18 @@ const init = async () => {
     if (!addAnother) inProgress = false;
   }
 
-  console.log(employeeDetails);
+  const categorizedEmployeeTypeDetails = formatEmployeeArray(employeeDetails);
+
+  console.log(categorizedEmployeeTypeDetails);
+
+  const allAnswers = {
+    starter: starterAnswer,
+    employeeDetails: categorizedEmployeeTypeDetails,
+  };
+
+  // console.log(allAnswers);
+
+  // const teamProfileHtml = generateHtml(allAnswers)
 };
 
 init();
