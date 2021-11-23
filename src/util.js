@@ -16,4 +16,6 @@ const formatEmployeeArray = (employeeDetails) => {
   );
 };
 
-module.exports = { formatEmployeeArray };
+const generateHtml = (finalAnswers) => {};
+
+module.exports = { formatEmployeeArray, generateHtml };
