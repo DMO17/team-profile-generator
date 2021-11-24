@@ -9,6 +9,8 @@ const {
 } = require("./questions");
 const { formatEmployeeArray, generateHtml } = require("./util");
 
+const fs = require("fs");
+
 const init = async () => {
   const { teamName, name, id, email, officeNumber } = await inquirer.prompt(
     starterQuestions
@@ -165,6 +167,18 @@ const init = async () => {
       </body>
     </html>`;
   };
+
+  const html = generateHtml();
+
+  const writeToFile = (filePath, data) => {
+    try {
+      fs.writeFileSync(filePath, data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  writeToFile("team-profile.html", html);
 };
 
 init();
