@@ -8,7 +8,7 @@ class Manager extends Employee {
     this.teamName = teamName;
   }
 
-  getTeamName() {
+  getTeamNameHtml() {
     return `  <header>
     <div class="jumbotron">
       <h1
@@ -30,6 +30,10 @@ class Manager extends Employee {
   }
 
   getRole() {
+    return "Manager";
+  }
+
+  getHtml() {
     return ` <section class="container mb-5">
     <div>
       <div class="h1 animate__animated animate__fadeInLeftBig">

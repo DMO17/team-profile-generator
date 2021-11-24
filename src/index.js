@@ -53,9 +53,9 @@ const init = async () => {
   const titleAndManagerHtml = (manager) => {
     return `
   
-    ${manager.getTeamName()}
+    ${manager.getTeamNameHtml()}
   
-    ${manager.getRole()}
+    ${manager.getHtml()}
   
     `;
   };
@@ -78,7 +78,7 @@ const init = async () => {
   
     ${intern
       .map((each) => {
-        return each.getRole();
+        return each.getHtml();
       })
       .join("")}
   
@@ -105,7 +105,7 @@ const init = async () => {
   
       ${engineer
         .map((each) => {
-          return each.getRole();
+          return each.getHtml();
         })
         .join("")}
   

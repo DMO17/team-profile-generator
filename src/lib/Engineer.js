@@ -7,9 +7,11 @@ class Engineer extends Employee {
     this.github = github;
   }
 
-  getGithub() {}
+  getGithub() {
+    return this.github;
+  }
 
-  getRole() {
+  getHtml() {
     return `  <div
     class="card animate__animated animate__zoomIn"
     style="width: 18rem"
@@ -30,6 +32,10 @@ class Engineer extends Employee {
       </ul>
     </div>
   </div>`;
+  }
+
+  getRole() {
+    return "Engineer";
   }
 }
 

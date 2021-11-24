@@ -12,10 +12,6 @@ class Intern extends Employee {
   }
 
   getHtml() {
-    return "intern";
-  }
-
-  getRole() {
     return ` <div
     class="card animate__animated animate__zoomIn"
     style="width: 18rem"
@@ -36,6 +32,10 @@ class Intern extends Employee {
       </ul>
     </div>
   </div>`;
+  }
+
+  getRole() {
+    return "Intern";
   }
 }
 
