@@ -20,34 +20,32 @@ const init = async () => {
 
   const employeeDetails = [];
 
-  // while (inProgress) {
-  //   const { employeeType } = await inquirer.prompt(typeOfEmployeeQuestion);
+  while (inProgress) {
+    const { employeeType } = await inquirer.prompt(typeOfEmployeeQuestion);
 
-  //   if (employeeType === "intern") {
-  //     const { name, id, email, school } = await inquirer.prompt(
-  //       internQuestions
-  //     );
-  //     const intern = new Intern(name, id, email, school);
-  //     console.log(intern);
-  //     employeeDetails.push(intern);
-  //   }
+    if (employeeType === "intern") {
+      const { name, id, email, school } = await inquirer.prompt(
+        internQuestions
+      );
+      const intern = new Intern(name, id, email, school);
+      console.log(intern);
+      employeeDetails.push(intern);
+    }
 
-  //   if (employeeType === "engineer") {
-  //     const { name, id, email, github } = await inquirer.prompt(
-  //       engineerQuestions
-  //     );
-  //     const engineer = new Engineer(name, id, email, github);
-  //     employeeDetails.push(engineer);
-  //   }
+    if (employeeType === "engineer") {
+      const { name, id, email, github } = await inquirer.prompt(
+        engineerQuestions
+      );
+      const engineer = new Engineer(name, id, email, github);
+      employeeDetails.push(engineer);
+    }
 
-  //   const { addAnother } = await inquirer.prompt(addAnotherEmployeeType);
+    const { addAnother } = await inquirer.prompt(addAnotherEmployeeType);
 
-  //   if (!addAnother) inProgress = false;
-  // }
+    if (!addAnother) inProgress = false;
+  }
 
-  // const categorizedEmployeeTypeDetails = formatEmployeeArray(employeeDetails);
-
-  // console.log(categorizedEmployeeTypeDetails);
+  const { intern, engineer } = formatEmployeeArray(employeeDetails);
 
   const titleAndManagerHtml = (manager) => {
     return `
@@ -58,6 +56,32 @@ const init = async () => {
     
     `;
   };
+
+  const internHtml = (intern) => {
+    return `<section class="container mb-5">
+    <div class="h1 animate__animated animate__fadeInLeftBig">
+      <u>INTERN</u>
+    </div>
+
+    <div
+      class="
+        d-flex
+        flex-row flex-wrap
+        justify-content-between
+        border border-dark
+        mt-3
+      "
+    >
+    
+    ${intern.map((each) => {
+      return each.getRole();
+    })}
+
+    </div>
+  </section>`;
+  };
+
+  console.log(internHtml(intern));
 
   const generateHtml = () => {};
 };
