@@ -49,7 +49,7 @@ class Manager extends Employee {
       <div class="card" style="width: 18rem">
         <img
           class="card-img-top"
-          src="./assets/images/manager.PNG"
+          src="./dist/assets/images/manager.PNG"
           alt="Card image cap"
         />
       </div>

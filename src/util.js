@@ -16,6 +16,10 @@ const formatEmployeeArray = (employeeDetails) => {
   );
 };
 
+const verifyResponses = (input) => {
+  return input ? true : "Please Enter Something";
+};
+
 const generateHtml = (finalAnswers) => {};
 
-module.exports = { formatEmployeeArray, generateHtml };
+module.exports = { formatEmployeeArray, generateHtml, verifyResponses };

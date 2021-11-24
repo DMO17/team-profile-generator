@@ -16,7 +16,7 @@ class Engineer extends Employee {
   >
     <img
       class="card-img-top"
-      src="./assets/images/engineer.PNG"
+      src="./dist/assets/images/engineer.PNG"
       alt="Card image cap"
     />
 

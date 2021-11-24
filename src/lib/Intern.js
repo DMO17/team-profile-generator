@@ -7,7 +7,13 @@ class Intern extends Employee {
     this.school = school;
   }
 
-  getSchool() {}
+  getSchool() {
+    return this.school;
+  }
+
+  getHtml() {
+    return "intern";
+  }
 
   getRole() {
     return ` <div
@@ -16,7 +22,7 @@ class Intern extends Employee {
   >
     <img
       class="card-img-top"
-      src="./assets/images/engineer.PNG"
+      src="./dist/assets/images/intern.PNG"
       alt="Card image cap"
     />
 
