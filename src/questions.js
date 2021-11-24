@@ -1,45 +1,35 @@
-const { verifyResponses } = require("./util");
+const { verifyResponses, verifyEmail, verifyNumber } = require("./util");
 
 const starterQuestions = [
   {
     type: "input",
     name: "teamName",
     message: "Whats is your Team/Department name?",
-    validate: (input) => {
-      return input ? true : "Please Enter Something";
-    },
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "name",
     message: "What is your Managers name?",
-    // validate: verifyResponses(name),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "id",
     message: "What is your Managers Employee ID?",
-    // validate: verifyResponses(id),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "email",
     message: "Enter your Managers Email Address",
-    validate: (email) => {
-      const re =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-      return re.test(email) || "Please Enter A Valid Email Address";
-    },
+    validate: verifyEmail,
   },
   {
     type: "input",
     name: "officeNumber",
     message: "Enter your Managers Office Number",
-    validate: (officeNumber) => {
-      const reg = /^\d+$/;
-      return reg.test(officeNumber) || "Please Enter A Valid Number";
-    },
+    validate: verifyNumber,
   },
 ];
 
@@ -60,25 +50,25 @@ const engineerQuestions = [
     type: "input",
     name: "name",
     message: "Enter the Engineers Name",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "id",
     message: "Enter the Engineers Employee ID",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "email",
     message: "Enter the Engineers Email Address",
-    // validate: verifyEmail(input),
+    validate: verifyEmail,
   },
   {
     type: "input",
     name: "github",
     message: "Enter Engineers Github Username",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
 ];
 
@@ -87,25 +77,25 @@ const internQuestions = [
     type: "input",
     name: "name",
     message: "Enter the Interns Name",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "id",
     message: "Enter the Interns Employee ID",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
   {
     type: "input",
     name: "email",
     message: "Enter the Interns Email Address",
-    // validate: verifyEmail(input),
+    validate: verifyEmail,
   },
   {
     type: "input",
     name: "school",
     message: "Enter Intern school name",
-    // validate: verifyResponses(input),
+    validate: verifyResponses,
   },
 ];
 
