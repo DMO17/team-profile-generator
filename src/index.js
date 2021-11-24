@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const { Intern, Engineer } = require("./lib");
+const { Intern, Engineer, Manager } = require("./lib");
 const {
   starterQuestions,
   typeOfEmployeeQuestion,
@@ -10,48 +10,56 @@ const {
 const { formatEmployeeArray, generateHtml } = require("./util");
 
 const init = async () => {
-  const starterAnswer = await inquirer.prompt(starterQuestions);
+  const { teamName, name, id, email, officeNumber } = await inquirer.prompt(
+    starterQuestions
+  );
+
+  const manager = new Manager(name, id, email, officeNumber, teamName);
 
   let inProgress = true;
 
   const employeeDetails = [];
 
-  while (inProgress) {
-    const { employeeType } = await inquirer.prompt(typeOfEmployeeQuestion);
+  // while (inProgress) {
+  //   const { employeeType } = await inquirer.prompt(typeOfEmployeeQuestion);
 
-    if (employeeType === "intern") {
-      const { name, id, email, school } = await inquirer.prompt(
-        internQuestions
-      );
-      const intern = new Intern(name, id, email, school);
-      employeeDetails.push(intern);
-    }
+  //   if (employeeType === "intern") {
+  //     const { name, id, email, school } = await inquirer.prompt(
+  //       internQuestions
+  //     );
+  //     const intern = new Intern(name, id, email, school);
+  //     console.log(intern);
+  //     employeeDetails.push(intern);
+  //   }
 
-    if (employeeType === "engineer") {
-      const { name, id, email, github } = await inquirer.prompt(
-        engineerQuestions
-      );
-      const engineer = new Engineer(name, id, email, github);
-      employeeDetails.push(engineer);
-    }
+  //   if (employeeType === "engineer") {
+  //     const { name, id, email, github } = await inquirer.prompt(
+  //       engineerQuestions
+  //     );
+  //     const engineer = new Engineer(name, id, email, github);
+  //     employeeDetails.push(engineer);
+  //   }
 
-    const { addAnother } = await inquirer.prompt(addAnotherEmployeeType);
+  //   const { addAnother } = await inquirer.prompt(addAnotherEmployeeType);
 
-    if (!addAnother) inProgress = false;
-  }
+  //   if (!addAnother) inProgress = false;
+  // }
 
-  const categorizedEmployeeTypeDetails = formatEmployeeArray(employeeDetails);
+  // const categorizedEmployeeTypeDetails = formatEmployeeArray(employeeDetails);
 
-  console.log(categorizedEmployeeTypeDetails);
+  // console.log(categorizedEmployeeTypeDetails);
 
-  const { starter, employeeInfo } = {
-    starter: starterAnswer,
-    employeeInfo: categorizedEmployeeTypeDetails,
+  const titleAndManagerHtml = (manager) => {
+    return `
+    
+    ${manager.getTeamName()}
+
+    ${manager.getRole()}
+    
+    `;
   };
 
-  console.log(starter, employeeInfo);
-
-  const teamProfileHtml = generateHtml(starter, employeeInfo);
+  const generateHtml = () => {};
 };
 
 init();

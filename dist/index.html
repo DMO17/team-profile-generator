@@ -63,12 +63,14 @@
           </div>
 
           <div class="card-body manager-details-container">
-            <h3 class="card-title">${name}</h3>
+            <h3 class="card-title">${this.name}</h3>
 
             <ul class="list-group">
-              <li class="list-group-item">Employee ID: ${id}</li>
-              <li class="list-group-item">Email Address: ${email}</li>
-              <li class="list-group-item">Office Number: ${officeNumber}</li>
+              <li class="list-group-item">Employee ID: ${this.id}</li>
+              <li class="list-group-item">Email Address: ${this.email}</li>
+              <li class="list-group-item">
+                Office Number: ${this.officeNumber}
+              </li>
             </ul>
           </div>
         </div>
@@ -99,13 +101,15 @@
             />
 
             <div class="card-body">
-              <h3 class="card-title">${name}</h3>
+              <h3 class="card-title">${this.name}</h3>
 
               <ul class="list-group">
-                <li class="list-group-item">Employee ID: ${id}</li>
-                <li class="list-group-item">Email Address:${email}</li>
-                <li class="list-group-item">Office Number: ${officeNumber}</li>
-                <li class="list-group-item">GitHub Username: ${github}</li>
+                <li class="list-group-item">Employee ID: ${this.id}</li>
+                <li class="list-group-item">Email Address:${this.email}</li>
+                <li class="list-group-item">
+                  Office Number: ${this.officeNumber}
+                </li>
+                <li class="list-group-item">GitHub Username: ${this.github}</li>
               </ul>
             </div>
           </div>
@@ -137,13 +141,15 @@
             />
 
             <div class="card-body">
-              <h3 class="card-title">${name}</h3>
+              <h3 class="card-title">${this.name}</h3>
 
               <ul class="list-group">
-                <li class="list-group-item">Employee ID: ${id}</li>
-                <li class="list-group-item">Email Address:${email}</li>
-                <li class="list-group-item">Office Number: ${officeNumber}</li>
-                <li class="list-group-item">School: ${school}</li>
+                <li class="list-group-item">Employee ID: ${this.id}</li>
+                <li class="list-group-item">Email Address:${this.email}</li>
+                <li class="list-group-item">
+                  Office Number: ${this.officeNumber}
+                </li>
+                <li class="list-group-item">School: ${this.school}</li>
               </ul>
             </div>
           </div>

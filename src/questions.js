@@ -6,22 +6,22 @@ const starterQuestions = [
   },
   {
     type: "input",
-    name: "managerName",
+    name: "name",
     message: "What is your Managers name?",
   },
   {
     type: "input",
-    name: "managerEmployeeID",
+    name: "id",
     message: "What is your Managers Employee ID?",
   },
   {
     type: "input",
-    name: "managerEmail",
+    name: "email",
     message: "Enter your Managers Email Address",
   },
   {
     type: "input",
-    name: "managerOfficeNum",
+    name: "officeNumber",
     message: "Enter your Managers Office Number",
   },
 ];
