@@ -31,7 +31,7 @@ const init = async () => {
         internQuestions
       );
       const intern = new Intern(name, id, email, school);
-      console.log(intern);
+
       employeeDetails.push(intern);
     }
 
